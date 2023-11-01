@@ -15,20 +15,20 @@ import (
 	"strings"
 )
 
-// Drinks - The drinks endpoints.
-type Drinks struct {
+// The drinks endpoints.
+type drinks struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newDrinks(sdkConfig sdkConfiguration) *Drinks {
-	return &Drinks{
+func newDrinks(sdkConfig sdkConfiguration) *drinks {
+	return &drinks{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetDrink - Get a drink.
 // Get a drink by name, if authenticated this will include stock levels and product codes otherwise it will only include public information.
-func (s *Drinks) GetDrink(ctx context.Context, name string) (*operations.GetDrinkResponse, error) {
+func (s *drinks) GetDrink(ctx context.Context, name string) (*operations.GetDrinkResponse, error) {
 	request := operations.GetDrinkRequest{
 		Name: name,
 	}
@@ -115,7 +115,7 @@ func (s *Drinks) GetDrink(ctx context.Context, name string) (*operations.GetDrin
 
 // ListDrinks - Get a list of drinks.
 // Get a list of drinks, if authenticated this will include stock levels and product codes otherwise it will only include public information.
-func (s *Drinks) ListDrinks(ctx context.Context, drinkType *shared.DrinkType) (*operations.ListDrinksResponse, error) {
+func (s *drinks) ListDrinks(ctx context.Context, drinkType *shared.DrinkType) (*operations.ListDrinksResponse, error) {
 	request := operations.ListDrinksRequest{
 		DrinkType: drinkType,
 	}
@@ -167,7 +167,7 @@ func (s *Drinks) ListDrinks(ctx context.Context, drinkType *shared.DrinkType) (*
 				return nil, err
 			}
 
-			res.Classes = out
+			res.Drinks = out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

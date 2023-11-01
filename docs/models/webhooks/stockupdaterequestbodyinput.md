@@ -1,4 +1,4 @@
-# StockUpdateRequestBody
+# StockUpdateRequestBodyInput
 
 
 ## Fields

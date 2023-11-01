@@ -1,4 +1,4 @@
-# AuthenticateResponseBody
+# Authenticate200ApplicationJSON
 
 The api key to use for authenticated endpoints.
 

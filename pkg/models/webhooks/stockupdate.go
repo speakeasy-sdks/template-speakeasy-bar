@@ -46,19 +46,19 @@ func (o *StockUpdateResponse) GetRawResponse() *http.Response {
 	return o.RawResponse
 }
 
-type StockUpdateRequestBody struct {
+type StockUpdateRequestBodyInput struct {
 	Drink      *shared.DrinkInput      `json:"drink,omitempty"`
 	Ingredient *shared.IngredientInput `json:"ingredient,omitempty"`
 }
 
-func (o *StockUpdateRequestBody) GetDrink() *shared.DrinkInput {
+func (o *StockUpdateRequestBodyInput) GetDrink() *shared.DrinkInput {
 	if o == nil {
 		return nil
 	}
 	return o.Drink
 }
 
-func (o *StockUpdateRequestBody) GetIngredient() *shared.IngredientInput {
+func (o *StockUpdateRequestBodyInput) GetIngredient() *shared.IngredientInput {
 	if o == nil {
 		return nil
 	}

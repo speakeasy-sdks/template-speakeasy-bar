@@ -24,7 +24,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if res.Classes != nil {
+	if res.Drinks != nil {
 		// handle response
 	}
 }
