@@ -15,20 +15,20 @@ import (
 	"strings"
 )
 
-// Orders - The orders endpoints.
-type Orders struct {
+// The orders endpoints.
+type orders struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newOrders(sdkConfig sdkConfiguration) *Orders {
-	return &Orders{
+func newOrders(sdkConfig sdkConfiguration) *orders {
+	return &orders{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // CreateOrder - Create an order.
 // Create an order for a drink.
-func (s *Orders) CreateOrder(ctx context.Context, requestBody []shared.OrderInput, callbackURL *string) (*operations.CreateOrderResponse, error) {
+func (s *orders) CreateOrder(ctx context.Context, requestBody []shared.OrderInput, callbackURL *string) (*operations.CreateOrderResponse, error) {
 	request := operations.CreateOrderRequest{
 		RequestBody: requestBody,
 		CallbackURL: callbackURL,

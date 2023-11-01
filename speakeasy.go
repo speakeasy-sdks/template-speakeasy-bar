@@ -84,14 +84,14 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 // https://docs.speakeasy.bar - The Speakeasy Bar Documentation.
 type Speakeasy struct {
 	// The authentication endpoints.
-	Authentication *Authentication
-	Config         *Config
+	Authentication *authentication
+	Config         *config
 	// The drinks endpoints.
-	Drinks *Drinks
+	Drinks *drinks
 	// The ingredients endpoints.
-	Ingredients *Ingredients
+	Ingredients *ingredients
 	// The orders endpoints.
-	Orders *Orders
+	Orders *orders
 
 	sdkConfiguration sdkConfiguration
 }
@@ -219,9 +219,9 @@ func New(opts ...SDKOption) *Speakeasy {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "0.4.0",
-			GenVersion:        "2.175.0",
-			UserAgent:         "speakeasy-sdk/go 0.4.0 2.175.0 1.0.0 github.com/speakeasy-sdks/template-speakeasy-bar",
+			SDKVersion:        "0.5.0",
+			GenVersion:        "2.173.0",
+			UserAgent:         "speakeasy-sdk/go 0.5.0 2.173.0 1.0.0 github.com/speakeasy-sdks/template-speakeasy-bar",
 			ServerDefaults: map[string]map[string]string{
 				"prod":    {},
 				"staging": {},

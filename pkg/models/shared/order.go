@@ -38,20 +38,20 @@ func (o *OrderInput) GetType() OrderType {
 	return o.Type
 }
 
-// Status - The status of the order.
-type Status string
+// OrderStatus - The status of the order.
+type OrderStatus string
 
 const (
-	StatusPending    Status = "pending"
-	StatusProcessing Status = "processing"
-	StatusComplete   Status = "complete"
+	OrderStatusPending    OrderStatus = "pending"
+	OrderStatusProcessing OrderStatus = "processing"
+	OrderStatusComplete   OrderStatus = "complete"
 )
 
-func (e Status) ToPointer() *Status {
+func (e OrderStatus) ToPointer() *OrderStatus {
 	return &e
 }
 
-func (e *Status) UnmarshalJSON(data []byte) error {
+func (e *OrderStatus) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -62,10 +62,10 @@ func (e *Status) UnmarshalJSON(data []byte) error {
 	case "processing":
 		fallthrough
 	case "complete":
-		*e = Status(v)
+		*e = OrderStatus(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for Status: %v", v)
+		return fmt.Errorf("invalid value for OrderStatus: %v", v)
 	}
 }
 
@@ -76,7 +76,7 @@ type Order struct {
 	// The number of units of the drink or ingredient to order.
 	Quantity int64 `json:"quantity"`
 	// The status of the order.
-	Status Status `json:"status"`
+	Status OrderStatus `json:"status"`
 	// The type of order.
 	Type OrderType `json:"type"`
 }
@@ -95,9 +95,9 @@ func (o *Order) GetQuantity() int64 {
 	return o.Quantity
 }
 
-func (o *Order) GetStatus() Status {
+func (o *Order) GetStatus() OrderStatus {
 	if o == nil {
-		return Status("")
+		return OrderStatus("")
 	}
 	return o.Status
 }

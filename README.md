@@ -84,7 +84,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if res.Classes != nil {
+	if res.Drinks != nil {
 		// handle response
 	}
 }
@@ -96,24 +96,24 @@ func main() {
 ## Available Resources and Operations
 
 
-### [.Authentication](docs/sdks/authentication/README.md)
+### [Authentication](docs/sdks/authentication/README.md)
 
 * [Authenticate](docs/sdks/authentication/README.md#authenticate) - Authenticate with the API by providing a username and password.
 
-### [.Config](docs/sdks/config/README.md)
+### [Config](docs/sdks/config/README.md)
 
 * [SubscribeToWebhooks](docs/sdks/config/README.md#subscribetowebhooks) - Subscribe to webhooks.
 
-### [.Drinks](docs/sdks/drinks/README.md)
+### [Drinks](docs/sdks/drinks/README.md)
 
 * [GetDrink](docs/sdks/drinks/README.md#getdrink) - Get a drink.
 * [ListDrinks](docs/sdks/drinks/README.md#listdrinks) - Get a list of drinks.
 
-### [.Ingredients](docs/sdks/ingredients/README.md)
+### [Ingredients](docs/sdks/ingredients/README.md)
 
 * [ListIngredients](docs/sdks/ingredients/README.md#listingredients) - Get a list of ingredients.
 
-### [.Orders](docs/sdks/orders/README.md)
+### [Orders](docs/sdks/orders/README.md)
 
 * [CreateOrder](docs/sdks/orders/README.md#createorder) - Create an order.
 <!-- End SDK Available Operations -->
@@ -215,7 +215,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if res.Object != nil {
+	if res.Authenticate200ApplicationJSONObject != nil {
 		// handle response
 	}
 }
@@ -251,7 +251,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if res.Object != nil {
+	if res.Authenticate200ApplicationJSONObject != nil {
 		// handle response
 	}
 }
