@@ -23,7 +23,7 @@ jobs:
       mode: pr
       openapi_docs: |
         - ./openapi.yaml
-      speakeasy_version: 1.109.2
+      speakeasy_version: latest
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }} #Get an API Key from your workspace at https://app.speakeasyapi.dev/
