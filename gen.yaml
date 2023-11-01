@@ -29,7 +29,7 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
 go:
-  version: 0.3.0
+  version: 0.4.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   installationURL: https://github.com/speakeasy-sdks/template-speakeasy-bar
