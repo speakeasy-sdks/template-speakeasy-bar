@@ -79,3 +79,6 @@ docs/sdks/drinks/README.md
 docs/sdks/ingredients/README.md
 docs/sdks/orders/README.md
 .gitattributes
+.devcontainer/README.md
+.devcontainer/devcontainer.json
+.devcontainer/setup.sh
