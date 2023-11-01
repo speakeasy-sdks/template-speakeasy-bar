@@ -11,8 +11,7 @@ This is a sample SDK generated for the Speakeasy Bar API. Have a look around and
 
 When you're ready go back to the Speakeasy app to complete onboarding and generate your first SDK!
 
-
-<img width="1439" alt="Screenshot 2023-11-01 at 1 41 25 PM" src="https://github.com/speakeasy-sdks/template-speakeasy-bar/assets/42415738/0a7e7408-5b1c-4d9e-ab8f-a053029f74cb">
+<img width="1468" alt="Screenshot 2023-11-01 at 1 46 48 PM" src="https://github.com/speakeasy-sdks/template-speakeasy-bar/assets/42415738/e07a1182-836f-4abf-97de-a479b63adb31">
 
 
 ## 🏗 **Welcome to your new SDK!** 🏗
