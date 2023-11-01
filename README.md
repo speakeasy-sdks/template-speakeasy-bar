@@ -9,9 +9,7 @@
 
 This is a sample SDK generated for the Speakeasy Bar API. Have a look around and familiarize yourself with the Speakeasy Product!
 
-When you're ready go back to the Speakeasy app to complete onboarding and generate your first SDK!
-
-<img width="1468" alt="Screenshot 2023-11-01 at 1 46 48 PM" src="https://github.com/speakeasy-sdks/template-speakeasy-bar/assets/42415738/e07a1182-836f-4abf-97de-a479b63adb31">
+When you're ready you can use this modify this repo to reference your own OpenAPI spec or go back to the Speakeasy app to complete onboarding and generate your first SDK!
 
 
 ## 🏗 **Welcome to your new SDK!** 🏗
