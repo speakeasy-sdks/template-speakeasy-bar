@@ -2,7 +2,7 @@ configVersion: 1.0.0
 management:
   docChecksum: abbc3a8faac54f76013e5d509a8d11ec
   docVersion: 1.0.0
-  speakeasyVersion: 1.109.2
+  speakeasyVersion: 1.111.0
   generationVersion: 2.173.0
 generation:
   comments:
@@ -29,7 +29,7 @@ features:
     inputOutputModels: 2.81.1
     serverIDs: 2.81.1
 go:
-  version: 0.5.0
+  version: 0.6.0
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: true
   installationURL: https://github.com/speakeasy-sdks/template-speakeasy-bar
