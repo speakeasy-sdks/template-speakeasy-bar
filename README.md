@@ -5,6 +5,7 @@
     
 </div>
 
+<br/>
 
 This is a sample SDK generated for the Speakeasy Bar API. Have a look around and familiarize yourself with the Speakeasy Product!
 
