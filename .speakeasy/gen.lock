@@ -3,10 +3,10 @@ id: 21d46a05-66ce-4545-8bd2-9680fda35912
 management:
   docChecksum: abbc3a8faac54f76013e5d509a8d11ec
   docVersion: 1.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.275.4
-  releaseVersion: 0.14.0
-  configChecksum: acb24ed887dd24d22ff4a6214a1a6b6e
+  speakeasyVersion: 1.204.1
+  generationVersion: 2.279.1
+  releaseVersion: 0.15.0
+  configChecksum: be55bfcc837e1b002e519cf22aeec65d
   repoURL: https://github.com/speakeasy-sdks/template-speakeasy-bar.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/template-speakeasy-bar
@@ -14,7 +14,7 @@ management:
 features:
   go:
     callbacks: 1.0.0
-    core: 3.4.3
+    core: 3.4.4
     devContainers: 2.90.0
     errors: 2.81.8
     examples: 2.81.3
@@ -22,6 +22,7 @@ features:
     globalSecurity: 2.82.8
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.0
+    responseFormat: 0.1.0
     serverIDs: 2.81.1
     webhooks: 1.0.0
 generatedFiles:
