@@ -18,7 +18,6 @@ const (
 func (e OrderType) ToPointer() *OrderType {
 	return &e
 }
-
 func (e *OrderType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

@@ -7,6 +7,22 @@ import (
 	"net/http"
 )
 
+var ListDrinksServerList = []string{
+	"https://speakeasy.bar",
+	"https://test.speakeasy.bar",
+}
+
+type ListDrinksSecurity struct {
+	BearerAuth *string `security:"scheme,type=http,subtype=bearer,name=Authorization"`
+}
+
+func (o *ListDrinksSecurity) GetBearerAuth() *string {
+	if o == nil {
+		return nil
+	}
+	return o.BearerAuth
+}
+
 type ListDrinksRequest struct {
 	// The type of drink to filter by. If not provided all drinks will be returned.
 	DrinkType *shared.DrinkType `queryParam:"style=form,explode=true,name=drinkType"`
@@ -22,14 +38,14 @@ func (o *ListDrinksRequest) GetDrinkType() *shared.DrinkType {
 type ListDrinksResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
-	// A list of drinks.
-	Drinks []shared.Drink
 	// An unknown error occurred interacting with the API.
 	Error *shared.Error
 	// HTTP response status code for this operation
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
+	// A list of drinks.
+	Classes []shared.Drink
 }
 
 func (o *ListDrinksResponse) GetContentType() string {
@@ -37,13 +53,6 @@ func (o *ListDrinksResponse) GetContentType() string {
 		return ""
 	}
 	return o.ContentType
-}
-
-func (o *ListDrinksResponse) GetDrinks() []shared.Drink {
-	if o == nil {
-		return nil
-	}
-	return o.Drinks
 }
 
 func (o *ListDrinksResponse) GetError() *shared.Error {
@@ -65,4 +74,11 @@ func (o *ListDrinksResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *ListDrinksResponse) GetClasses() []shared.Drink {
+	if o == nil {
+		return nil
+	}
+	return o.Classes
 }
