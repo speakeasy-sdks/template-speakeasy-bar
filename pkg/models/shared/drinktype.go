@@ -22,7 +22,6 @@ const (
 func (e DrinkType) ToPointer() *DrinkType {
 	return &e
 }
-
 func (e *DrinkType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {

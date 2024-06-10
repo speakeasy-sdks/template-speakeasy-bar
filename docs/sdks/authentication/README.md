@@ -7,9 +7,9 @@ The authentication endpoints.
 
 ### Available Operations
 
-* [Authenticate](#authenticate) - Authenticate with the API by providing a username and password.
+* [Login](#login) - Authenticate with the API by providing a username and password.
 
-## Authenticate
+## Login
 
 Authenticate with the API by providing a username and password.
 
@@ -19,25 +19,28 @@ Authenticate with the API by providing a username and password.
 package main
 
 import(
+	templatespeakeasybar "github.com/speakeasy-sdks/template-speakeasy-bar"
+	"github.com/speakeasy-sdks/template-speakeasy-bar/pkg/models/operations"
 	"context"
 	"log"
-	templatespeakeasybar "github.com/speakeasy-sdks/template-speakeasy-bar"
-	"github.com/speakeasy-sdks/template-speakeasy-bar/pkg/models/shared"
-	"github.com/speakeasy-sdks/template-speakeasy-bar/pkg/models/operations"
 )
 
 func main() {
-    s := templatespeakeasybar.New(
-        templatespeakeasybar.WithSecurity(""),
-    )
+    s := templatespeakeasybar.New()
+    request := operations.LoginRequestBody{
+        Type: operations.TypeAPIKey,
+    }
 
+    security := operations.LoginSecurity{
+            Password: "<PASSWORD>",
+            Username: "<USERNAME>",
+        }
     ctx := context.Background()
-    res, err := s.Authentication.Authenticate(ctx, operations.AuthenticateRequestBody{})
+    res, err := s.Authentication.Login(ctx, request, security)
     if err != nil {
         log.Fatal(err)
     }
-
-    if res.Authenticate200ApplicationJSONObject != nil {
+    if res.Object != nil {
         // handle response
     }
 }
@@ -45,13 +48,17 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `ctx`                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                    | :heavy_check_mark:                                                                       | The context to use for the request.                                                      |
-| `request`                                                                                | [operations.AuthenticateRequestBody](../../models/operations/authenticaterequestbody.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `ctx`                                                                          | [context.Context](https://pkg.go.dev/context#Context)                          | :heavy_check_mark:                                                             | The context to use for the request.                                            |
+| `request`                                                                      | [operations.LoginRequestBody](../../pkg/models/operations/loginrequestbody.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `security`                                                                     | [operations.LoginSecurity](../../pkg/models/operations/loginsecurity.md)       | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
 
 
 ### Response
 
-**[*operations.AuthenticateResponse](../../models/operations/authenticateresponse.md), error**
-
+**[*operations.LoginResponse](../../pkg/models/operations/loginresponse.md), error**
+| Error Object       | Status Code        | Content Type       |
+| ------------------ | ------------------ | ------------------ |
+| sdkerrors.APIError | 5XX                | application/json   |
+| sdkerrors.SDKError | 4xx-5xx            | */*                |

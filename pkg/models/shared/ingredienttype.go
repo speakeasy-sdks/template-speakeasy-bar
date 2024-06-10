@@ -19,7 +19,6 @@ const (
 func (e IngredientType) ToPointer() *IngredientType {
 	return &e
 }
-
 func (e *IngredientType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
